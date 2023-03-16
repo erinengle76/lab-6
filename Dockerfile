@@ -1,9 +1,10 @@
-FROM python:3.8
+FROM python:3.9
 
 WORKDIR /app
 
-COPY requirements.txt
-RUN pip3 install requirements.txt
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY jones_erin_lab-6.py /app
+COPY . .
+
 CMD ["python3", "jones_erin_lab-6.py"]
